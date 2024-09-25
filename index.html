@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>大白爱小白</title>
+
+  <style type="text/css">
+    #allmenu {
+      position: fixed;
+      right: 10px;
+      bottom: 90px;
+      text-align: center;
+    }
+
+    .dropbtn {
+      background-color: #28bafd;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      width: 100%;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-content a {
+      color: black;
+
+      padding: 12px 16px;
+
+      text-decoration: none;
+
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #04afff;
+    }
+  </style>
+  <link href="css/default.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="mainDiv">
+    <div id="content">
+      <div id="code">
+        <span class="comments">/**</span><br />
+        <span class="space" /><span class="comments">*2015—10-01,</span><br />
+        <span class="space" /><span class="comments">*for ever.</span><br />
+        <span class="space" /><span class="comments">*/</span><br />
+        Boy name = <span class="keyword">Mr</span> SHULAN<br />
+        Girl name = <span class="keyword">Mrs</span> PIGBABY<br />
+        <span class="comments">// Fall in love river. </span><br />
+        The boy love the girl;<br />
+        <span class="comments">// They love each other.</span><br />
+        The girl loved the boy;<br />
+        <span class="comments">// AS time goes on.</span><br />
+        The boy can not be separated the girl;<br />
+        <span class="comments">// At the same time.</span><br />
+        The girl can not be separated the boy;<br />
+        <span class="comments">// Both wind and snow all over the sky.</span><br />
+        <span class="comments">// Whether on foot or 5 kilometers.</span><br />
+        <span class="keyword">The boy</span> very
+        <span class="keyword">happy</span>;<br />
+        <span class="keyword">The girl</span> is also very
+        <span class="keyword">happy</span>;<br />
+        <span class="placeholder" /><span class="comments">// Whether it is right now</span><br />
+        <span class="placeholder" /><span class="comments">// Still in the distant future.</span><br />
+        <span class="placeholder" />The boy has but one dream;<br />
+        <span class="comments">// The boy wants the girl could well have been happy.</span><br />
+        <br />
+        <br />
+        I want to say:<br />
+        Baby, I love you forever;<br />
+      </div>
+      <div id="loveHeart">
+        <canvas id="garden"></canvas>
+        <div id="words">
+          <div id="messages">
+            亲爱的，这是我们相爱在一起的时光。
+            <div id="elapseClock"></div>
+          </div>
+          <div id="loveu">
+            爱你直到永永远远。<br />
+            <div class="signature">- 树懒先生</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div id="allmenu">
+        <div class="dropdown">
+            <button class="dropbtn">Go To</button>
+          <div class="dropdown-content">
+            <a href="#">博客</a>
+            <a href="#">工具箱</a>
+          </div>
+        </div>
+      </div> -->
+    <!-- <div class="heart-shape"></div> -->
+    <div style="margin:20px;text-align:center;">
+      <span>备案号:</span>
+      <a href="https://beian.miit.gov.cn" target="_blank">蜀ICP备17035875号-1</a>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/garden.js"></script>
+  <script type="text/javascript" src="js/function.js"></script>
+  <script type="text/javascript">
+    var offsetX = $("#loveHeart").width() / 2;
+    var offsetY = $("#loveHeart").height() / 2 - 55;
+    var together = new Date();
+    together.setFullYear(2015, 10, 1);
+    together.setHours(6);
+    together.setMinutes(0);
+    together.setSeconds(0);
+    together.setMilliseconds(0);
+
+    if (!document.createElement("canvas").getContext) {
+      var msg = document.createElement("div");
+      msg.id = "errorMsg";
+      msg.innerHTML =
+        "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+      document.body.appendChild(msg);
+      $("#code").css("display", "none");
+      $("#copyright").css("position", "absolute");
+      $("#copyright").css("bottom", "10px");
+      document.execCommand("stop");
+    } else {
+      setTimeout(function () {
+        startHeartAnimation();
+      }, 5000);
+
+      timeElapse(together);
+      setInterval(function () {
+        timeElapse(together);
+      }, 500);
+
+      adjustCodePosition();
+      $("#code").typewriter();
+    }
+  </script>
+  <script type="text/javascript" src="https://s95.cnzz.com/z_stat.php?id=1261447697&web_id=1261447697"></script>
+</body>
+
+
+</html>
